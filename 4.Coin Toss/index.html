@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title> Coin toss </title>
+    <link rel = "stylesheet" type = "text/css" href = "CoinToss.css">
+</head>
+
+
+<body>
+    <h1 class = "message">Select either Heads or Tails  </h1>
+        <div class= "btn">
+            <button type ="button"> Heads </button>
+            <button type ="button"> Tails </button>
+        </div>
+    
+    <script>
+        const coinArray = ["Heads","Tails"];
+        let score = [0,0];
+        const message = document.querySelector(".message");
+        const buttons = document.querySelectorAll("button");
+       
+        for(let i=0; i<buttons.length;i++){
+            buttons[i].addEventListener("click",tossCoin);
+        }
+        
+        function tossCoin(e){
+            console.log(e.target.textContent);
+            let playerGuess = e.target.innerText;
+            console.log(" player:" +playerGuess);
+            let computerToss = Math.floor(Math.random()*2);
+            console.log(coinArray[computerToss]);
+            let computerGuess = coinArray[computerToss]; 
+            console.log(" computer:" +computerGuess);
+            message.innerHTML = "Computer selected: " +computerGuess + "<br>";
+            let output;
+                if(playerGuess===computerGuess){
+                    output = " Player wins";
+                    console.log("Win");
+                    score[0]++;
+                  
+                }else {
+                    output = " Computer wins";
+                    console.log("Loose");
+                    score[1]++;  
+                }
+            message.innerHTML += output + "<br> Player " + score[0] + " Computer " + score[1];
+        }
+    </script>
+</body>    
+    
+</html> 
