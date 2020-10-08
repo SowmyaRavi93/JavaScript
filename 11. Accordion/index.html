@@ -1,0 +1,46 @@
+
+<html>
+    <head>
+        <title> Accordion </title>
+        <style>
+            .main .body {
+                padding: 5px;
+                border: 1px solid black;
+                display: none;
+            }
+            .main .active .body{
+                display :block;
+            }
+            .main .active .ahead{
+                background-color: #bbb;
+            }
+            .main .ahead {
+                background-color:black;
+                padding:5px;
+                color: white;
+                font-size: 1.6em;
+                margin:5px 0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class ="main"> 
+            <div class = "panel">
+                <div class = "ahead">Panel 1 Head</div>
+                <div class ='body'> Panel 1 Body</div>
+            </div>
+            <div class = "panel">
+                <div class = "ahead">Panel 2 Head</div>
+                <div class ='body'> Panel 2 Body</div>
+            </div>
+            <div class = "panel">
+                <div class = "ahead">Panel 3 Head</div>
+                <div class ='body'> Panel 3 Body</div>
+            </div>
+        </div>
+        
+        <script src ="app.js"></script>
+    
+    </body>
+</html>
